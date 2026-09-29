@@ -1,0 +1,3 @@
+package adaptivelearning.module.planner.service;
+import adaptivelearning.module.planner.dto.request.*; import adaptivelearning.module.planner.dto.response.*; import java.util.List;
+public interface PlannerService { StudyPlanResponse createPlan(Long userId, CreatePlanRequest request); List<StudyPlanResponse> listPlans(Long userId); StudyPlanResponse getPlan(Long userId, Long id); PlanTaskResponse updateTask(Long taskId, UpdateTaskRequest req); StudyPlanResponse completePlan(Long userId, Long planId); StudyPlanResponse archivePlan(Long userId, Long planId); List<PlanTaskResponse> generateDefaultTasks(Long planId); }

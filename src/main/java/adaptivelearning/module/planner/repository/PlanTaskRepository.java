@@ -1,0 +1,3 @@
+package adaptivelearning.module.planner.repository;
+import adaptivelearning.module.planner.entity.PlanTask; import adaptivelearning.shared.enums.PlanTaskStatus; import org.springframework.data.jpa.repository.JpaRepository; import java.time.LocalDate; import java.util.List;
+public interface PlanTaskRepository extends JpaRepository<PlanTask,Long> { List<PlanTask> findByPlanIdOrderByScheduledDateAsc(Long planId); List<PlanTask> findByPlanIdAndStatus(Long planId, PlanTaskStatus status); long countByPlanIdAndStatus(Long planId, PlanTaskStatus status); List<PlanTask> findByPlanIdAndSkill(Long planId,String skill); List<PlanTask> findByPlanIdAndScheduledDateBetween(Long planId, LocalDate from, LocalDate to); }
